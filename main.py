@@ -14,7 +14,6 @@ class ConvertRequest(BaseModel):
 async def convert_coords(request: ConvertRequest):
     try:
         if request.transform == "wgs84_to_cgcs2000":
-            # WGS84 (EPSG:4326) → CGCS2000 / 3-degree Gauss-Kruger zone 38 (EPSG:4547)
             transformer = Transformer.from_crs("EPSG:4326", "EPSG:4547", always_xy=True)
             result = []
             for lat, lon in request.coords:
