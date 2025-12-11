@@ -2,3 +2,4 @@ fastapi
 uvicorn[standard]
 pyproj
 pydantic
+mangum  # ← 新增！用于适配 Vercel
